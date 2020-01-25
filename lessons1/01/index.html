@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Задание 1 : Сделать компонент для отображения статьи    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <style>
+        .article {
+            padding: 50px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Задание 1 : Сделать компонент для отображения статьи</h1>
+    <div id="content"></div>
+
+    <script type="text/babel">
+        var Article = React.createClass({
+            render: function() {
+                return (
+                    <div className="article">
+                        <h1>{this.props.title}</h1>
+                        <p>{this.props.body}</p>
+                        <h5>{this.props.author}</h5>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <div>
+                <Article title="Заголовок статьи" author="Автор статьи" body="Контент статьи. Контент статьи.Контент статьи.Контент статьи.Контент статьи.Контент статьи.Контент статьи." />    
+                
+            </div>,
+            document.getElementById('content')
+        );
+    </script>
+</body>
+</html>
